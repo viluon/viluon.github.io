@@ -3,6 +3,8 @@ layout: post
 title: The Implicit Limitation Problem
 ---
 
+> **Warning**: This glorified scrapbook of a post is under heavy construction.
+
 So this is closely related to Tang and to denotational semantics.
 
 ```haskell
