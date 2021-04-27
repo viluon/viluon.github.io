@@ -3,7 +3,8 @@ layout: post
 title: The Implicit Limitation Problem
 ---
 
-> **Warning**: This glorified scrapbook of a post is under heavy construction.
+> **Warning**: This glorified scrapbook of a post is still under heavy
+> construction.
 
 I've discovered an issue with conventional programming languages which, I
 believe, runs deep in their theory and design. I call this "The Implicit
@@ -82,12 +83,12 @@ runtime values with `instanceof`.
 
 However, Kotlin is not a dependent language. The proof of `str != null` is not
 first-class: you cannot pass it to a function, store it in a variable, or
-inspect it in any way. The boolean value it represents loses the relevant
-structure of a proof, the simple values of `true` and `false` no longer relate
-`str` and `null`. Thus the analysis required for smart casts is local in nature
-and internal to the compiler. Smart casts are a frequent but special case of a
-much more general concept relevant to an infinitude of other expressions that
-the Kotlin compiler does not recognise.
+inspect it in any way. The boolean value you get from the comparison loses the
+relevant structure of a proof, the simple values of `true` and `false` no
+longer relate `str` and `null`. Thus the analysis required for smart casts is
+local in nature and internal to the compiler. Smart casts are a frequent but
+special case of a much more general concept relevant to an infinitude of other
+expressions that the Kotlin compiler does not recognise.
 
 Dependent languages, on the other hand, understand the value of structure
 better. Rather than magically adding structure to booleans, they typically
@@ -95,7 +96,8 @@ include special types which express equality. Idris has [the `=`
 type](http://docs.idris-lang.org/en/latest/tutorial/theorems.html) for this
 purpose, the values of which stand for actual proofs of equality and can be
 treated like so. These reified proofs can be passed between functions,
-destructured, combined with other proofs, and rewritten.
+destructured, combined with other proofs, and, perhaps most importantly, used
+to rewrite terms.
 
 ```haskell
 

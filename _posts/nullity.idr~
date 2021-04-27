@@ -1,0 +1,9 @@
+
+ifNull : (str: Maybe String) -> ((s: String) -> str = Just s -> a) -> (str = Nothing -> a) -> a
+ifNull Nothing  _ if_else = if_else Refl
+ifNull str@(Just s) if_then _ = if_then s Refl
+
+
+foo : Maybe String -> IO ()
+foo mstr = print $ "asdf"
+
